@@ -39,7 +39,7 @@ public class RssUtils {
     }
 
     @SneakyThrows
-    public com.kasperin.rssfeeds.model.Channel parseFeeds(){
+    public String parseFeeds(){
         URL feedUrl= new URL(RESOURCE_LOCATION);
         SyndFeedInput input = new SyndFeedInput();
         SyndFeed feed = input.build(new XmlReader(feedUrl));
@@ -54,10 +54,12 @@ public class RssUtils {
        //System.out.print(output.outputString(feed));
        // System.out.print(feed);
 
-      return channelRepository.save(convertToPojo(channel));
+        return output.outputString(feed);
+
+        //return channelRepository.save(convertToPojo(channel));
 
       // return channelRepository.save(convertToPojo(channel));
-       //String string = (output.outputString(feed));
+       //String string = ();
        // output.output(feed);
 
        // return feedEntryService.save(convertToPojo(input.build(new XmlReader(feedUrl))));

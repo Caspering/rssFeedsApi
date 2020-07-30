@@ -28,7 +28,7 @@ public class RssFeedController {
 
     @GetMapping("/rss")
     @ResponseBody
-    public Channel generateRssFeed() {
+    public String generateRssFeed() {
 //        return rssGeneratorService.generateRssFeed();
         return rssUtils.parseFeeds();
     }

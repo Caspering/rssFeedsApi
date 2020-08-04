@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class RssFeedController {
 
     public static final String BASE_URL = "/rss";
-    private final ChannelRepository channelRepository;
     private final FeedEntryService feedEntryService;
     private final RssUtils rssUtils;
 

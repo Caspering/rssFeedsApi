@@ -1,25 +1,17 @@
 package com.kasperin.rssfeeds.services;
 
-import com.kasperin.rssfeeds.Repository.ChannelRepository;
 import com.kasperin.rssfeeds.Repository.FeedRepository;
 import com.kasperin.rssfeeds.model.Feed;
-import com.kasperin.rssfeeds.model.FeedEntry;
 import com.rometools.rome.feed.synd.*;
 import com.rometools.rome.io.SyndFeedInput;
-import com.rometools.rome.io.SyndFeedOutput;
 import com.rometools.rome.io.XmlReader;
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.rss.RssEndpoint;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @Component

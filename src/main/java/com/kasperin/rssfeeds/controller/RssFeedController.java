@@ -1,9 +1,6 @@
 package com.kasperin.rssfeeds.controller;
 
-import com.kasperin.rssfeeds.Repository.ChannelRepository;
-import com.kasperin.rssfeeds.Repository.FeedRepository;
 import com.kasperin.rssfeeds.model.Feed;
-import com.kasperin.rssfeeds.model.FeedEntry;
 import com.kasperin.rssfeeds.services.FeedEntryService;
 import com.kasperin.rssfeeds.services.RssUtils;
 import lombok.AllArgsConstructor;

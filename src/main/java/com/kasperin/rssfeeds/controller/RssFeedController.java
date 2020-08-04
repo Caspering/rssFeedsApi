@@ -18,19 +18,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(RssFeedController.BASE_URL)
 public class RssFeedController {
 
-    public static final String BASE_URL = "/api/v1/rss";
-    //private final WebScraperService webScraperService;
+    public static final String BASE_URL = "/rss";
     private final ChannelRepository channelRepository;
     private final FeedEntryService feedEntryService;
     private final RssUtils rssUtils;
-    //private final FeedRepository feedRepository;
 
-   // private final RssGeneratorService rssGeneratorService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
     public Feed generateRssFeed() {
-//        return rssGeneratorService.generateRssFeed();
         return rssUtils.parseFeeds();
     }
 }

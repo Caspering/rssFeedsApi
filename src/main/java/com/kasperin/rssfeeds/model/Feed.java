@@ -52,4 +52,3 @@ public class Feed implements Serializable {
     }
 
 }
-// this.addFeedEntry(new FeedEntry(syndFeed.getEntries().stream().forEach(addFeedEntry())));

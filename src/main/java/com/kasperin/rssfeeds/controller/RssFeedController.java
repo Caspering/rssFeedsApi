@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class RssFeedController {
 
     public static final String BASE_URL = "/rss";
+
     private final FeedEntryService feedEntryService;
     private final RssUtils rssUtils;
-
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody

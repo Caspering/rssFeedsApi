@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FeedRepository extends JpaRepository<Feed, Long> {
 
+
+    Feed findByTitleContainsIgnoreCase(String title);
 }

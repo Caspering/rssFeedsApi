@@ -34,7 +34,7 @@ public class FeedServiceImpl implements FeedService{
     }
 
     @Override
-    public Feed findByTitle(String title) {
+    public List<Feed> findByTitle(String title) {
         return feedRepository.findByTitleContainsIgnoreCase(title);
     }
 }

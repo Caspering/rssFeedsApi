@@ -17,30 +17,22 @@ import java.net.URL;
 @Component
 @AllArgsConstructor
 public class RssUtils {
-      //  extends RouteBuilder {
-
-    private final FeedRepository feedRepository;
-    private final FeedEntryService feedEntryService;
-    private final ChannelRepository channelRepository;
-
-
-
     public static final String RESOURCE_LOCATION = "https://us-cert.cisa.gov/ncas/alerts.xml";
+
+    private final FeedService feedService;
 
     @SneakyThrows
     @Scheduled(fixedDelay=300000)
     public void pullFeedsJob(){
         parseFeeds();
-        //configure();
-       // log.info("current parsed feeds /n"+parseFeeds());
+        log.info("current parsed feeds /n"+parseFeeds());
     }
 
     @SneakyThrows
     public Feed parseFeeds(){
         URL feedUrl= new URL(RESOURCE_LOCATION);
         SyndFeedInput input = new SyndFeedInput();
-
-        return feedRepository.save(convertToPojoFeed(input.build(new XmlReader(feedUrl))));
+        return feedService.save(convertToPojoFeed(new SyndFeedInput().build(new XmlReader(feedUrl))));
     }
 
     private static Feed convertToPojoFeed(SyndFeed feed){

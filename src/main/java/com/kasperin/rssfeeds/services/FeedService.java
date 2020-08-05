@@ -9,6 +9,6 @@ public interface FeedService {
     List<Feed> findAll();
     Optional<Feed> findById(Long id);
     Feed save(Feed feed);
-    Feed findByTitle(String Title);
+    List<Feed> findByTitle(String Title);
     //Feed find
 }
